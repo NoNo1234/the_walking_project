@@ -1,0 +1,25 @@
+----------
+Francais : 
+
+Tutoriel d'installation d'une Sandbox afin d'acceuillir n'importe quel malware tout en évitant les dangers sur sa machine locale.
+
+Dans cette solution nous allons utiliser un logiciel qui s'appelle Cuckoo Box.
+
+Cuckoo Box est un logiciel Open Source pour automatiser l'analyse des fichiers suspects. Pour ce faire, elle fait appel à des composants personnalisés qui surveillent le comportement des processus malveillants lors de l'exécution dans un environnement isolé.
+
+Vous pouvez suivre l'installation en suivant les étapes décrites dans ce tutoriel à l'adresse suivante :
+
+http://docs.cuckoosandbox.org/en/latest/installation/
+
+----------
+Anglais :
+
+Tutorial for installing a sandbox to accommodate any malware while avoiding the dangers on their local machine.
+
+In this solution we use a software called Cuckoo Box.
+
+Cuckoo Box is Open Source software to automate the analysis of suspicious files. To do this, it uses custom components that monitor the behavior of malicious processes when running in an isolated environment.
+
+You can follow the installation by following the steps in this tutorial at the following address:
+
+http://docs.cuckoosandbox.org/en/latest/installation/
