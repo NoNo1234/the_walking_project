@@ -1,0 +1,354 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>modules.signatures.creates_exe.CreatesExe</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            ><a class="navbar" target="_top" href="http://www.cuckoobox.org">Cuckoo Sandbox Developer Documentation</a></th>
+          </tr></table></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="modules-module.html">Package&nbsp;modules</a> ::
+        <a href="modules.signatures-module.html">Package&nbsp;signatures</a> ::
+        <a href="modules.signatures.creates_exe-module.html">Module&nbsp;creates_exe</a> ::
+        Class&nbsp;CreatesExe
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="modules.signatures.creates_exe.CreatesExe-class.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<!-- ==================== CLASS DESCRIPTION ==================== -->
+<h1 class="epydoc">Class CreatesExe</h1><p class="nomargin-top"><span class="codelink"><a href="modules.signatures.creates_exe-pysrc.html#CreatesExe">source&nbsp;code</a></span></p>
+<center>
+<center>  <map id="uml_class_diagram_for_modules__21" name="uml_class_diagram_for_modules__21">
+<area shape="rect" href="modules.signatures.creates_exe.CreatesExe-class.html#name" title="modules.signatures.creates_exe.CreatesExe.name" alt="" coords="276,340,345,359"/>
+<area shape="rect" href="modules.signatures.creates_exe.CreatesExe-class.html#description" title="modules.signatures.creates_exe.CreatesExe.description" alt="" coords="276,359,345,377"/>
+<area shape="rect" href="modules.signatures.creates_exe.CreatesExe-class.html#severity" title="modules.signatures.creates_exe.CreatesExe.severity" alt="" coords="276,377,345,396"/>
+<area shape="rect" href="modules.signatures.creates_exe.CreatesExe-class.html#categories" title="modules.signatures.creates_exe.CreatesExe.categories" alt="" coords="276,396,345,415"/>
+<area shape="rect" href="modules.signatures.creates_exe.CreatesExe-class.html#authors" title="modules.signatures.creates_exe.CreatesExe.authors" alt="" coords="276,415,345,433"/>
+<area shape="rect" href="modules.signatures.creates_exe.CreatesExe-class.html#minimum" title="hash(x)" alt="" coords="276,433,345,452"/>
+<area shape="rect" href="modules.signatures.creates_exe.CreatesExe-class.html#run" title="Start signature processing." alt="" coords="276,455,345,473"/>
+<area shape="rect" href="modules.signatures.creates_exe.CreatesExe-class.html" title="modules.signatures.creates_exe.CreatesExe" alt="" coords="275,323,347,475"/>
+<area shape="rect" href="lib.cuckoo.common.abstracts.Signature-class.html#families" title="lib.cuckoo.common.abstracts.Signature.families" alt="" coords="17,28,604,47"/>
+<area shape="rect" href="lib.cuckoo.common.abstracts.Signature-class.html#references" title="lib.cuckoo.common.abstracts.Signature.references" alt="" coords="17,47,604,65"/>
+<area shape="rect" href="lib.cuckoo.common.abstracts.Signature-class.html#alert" title="lib.cuckoo.common.abstracts.Signature.alert" alt="" coords="17,65,604,84"/>
+<area shape="rect" href="lib.cuckoo.common.abstracts.Signature-class.html#enabled" title="lib.cuckoo.common.abstracts.Signature.enabled" alt="" coords="17,84,604,103"/>
+<area shape="rect" href="lib.cuckoo.common.abstracts.Signature-class.html#maximum" title="hash(x)" alt="" coords="17,103,604,121"/>
+<area shape="rect" href="lib.cuckoo.common.abstracts.Signature-class.html#__init__" title="x.__init__(...) initializes x; see help(type(x)) for signature" alt="" coords="17,124,604,143"/>
+<area shape="rect" href="lib.cuckoo.common.abstracts.Signature-class.html#check_file" title="Checks for a file being opened." alt="" coords="17,143,604,161"/>
+<area shape="rect" href="lib.cuckoo.common.abstracts.Signature-class.html#check_key" title="Checks for a registry key being opened." alt="" coords="17,161,604,180"/>
+<area shape="rect" href="lib.cuckoo.common.abstracts.Signature-class.html#check_mutex" title="Checks for a mutex being opened." alt="" coords="17,180,604,199"/>
+<area shape="rect" href="lib.cuckoo.common.abstracts.Signature-class.html#check_api" title="Checks for an API being called." alt="" coords="17,199,604,217"/>
+<area shape="rect" href="lib.cuckoo.common.abstracts.Signature-class.html#check_argument" title="Checks for a specific argument of an invoked API." alt="" coords="17,217,604,236"/>
+<area shape="rect" href="lib.cuckoo.common.abstracts.Signature-class.html#check_ip" title="Checks for an IP address being contacted." alt="" coords="17,236,604,255"/>
+<area shape="rect" href="lib.cuckoo.common.abstracts.Signature-class.html#check_domain" title="Checks for a domain being contacted." alt="" coords="17,255,604,273"/>
+<area shape="rect" href="lib.cuckoo.common.abstracts.Signature-class.html#check_url" title="Checks for a URL being contacted." alt="" coords="17,273,604,292"/>
+<area shape="rect" href="lib.cuckoo.common.abstracts.Signature-class.html" title="Base class for Cuckoo signatures." alt="" coords="16,11,605,293"/>
+</map>
+  <img src="uml_class_diagram_for_modules__21.gif" alt='' usemap="#uml_class_diagram_for_modules__21" ismap="ismap" class="graph-without-title" />
+</center>
+</center>
+<hr />
+<!-- ==================== INSTANCE METHODS ==================== -->
+<a name="section-InstanceMethods"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Instance Methods</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-InstanceMethods"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="modules.signatures.creates_exe.CreatesExe-class.html#run" class="summary-sig-name">run</a>(<span class="summary-sig-arg">self</span>)</span><br />
+      Start signature processing.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="modules.signatures.creates_exe-pysrc.html#CreatesExe.run">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" class="summary">
+    <p class="indent-wrapped-lines"><b>Inherited from <code><a href="lib.cuckoo.common.abstracts.Signature-class.html">lib.cuckoo.common.abstracts.Signature</a></code></b>:
+      <code><a href="lib.cuckoo.common.abstracts.Signature-class.html#__init__">__init__</a></code>,
+      <code><a href="lib.cuckoo.common.abstracts.Signature-class.html#check_api">check_api</a></code>,
+      <code><a href="lib.cuckoo.common.abstracts.Signature-class.html#check_argument">check_argument</a></code>,
+      <code><a href="lib.cuckoo.common.abstracts.Signature-class.html#check_domain">check_domain</a></code>,
+      <code><a href="lib.cuckoo.common.abstracts.Signature-class.html#check_file">check_file</a></code>,
+      <code><a href="lib.cuckoo.common.abstracts.Signature-class.html#check_ip">check_ip</a></code>,
+      <code><a href="lib.cuckoo.common.abstracts.Signature-class.html#check_key">check_key</a></code>,
+      <code><a href="lib.cuckoo.common.abstracts.Signature-class.html#check_mutex">check_mutex</a></code>,
+      <code><a href="lib.cuckoo.common.abstracts.Signature-class.html#check_url">check_url</a></code>
+      </p>
+    <div class="private">    <p class="indent-wrapped-lines"><b>Inherited from <code><a href="lib.cuckoo.common.abstracts.Signature-class.html">lib.cuckoo.common.abstracts.Signature</a></code></b> (private):
+      <code><a href="lib.cuckoo.common.abstracts.Signature-class.html#_check_value" onclick="show_private();">_check_value</a></code>
+      </p></div>
+    <p class="indent-wrapped-lines"><b>Inherited from <code>object</code></b>:
+      <code>__delattr__</code>,
+      <code>__format__</code>,
+      <code>__getattribute__</code>,
+      <code>__hash__</code>,
+      <code>__new__</code>,
+      <code>__reduce__</code>,
+      <code>__reduce_ex__</code>,
+      <code>__repr__</code>,
+      <code>__setattr__</code>,
+      <code>__sizeof__</code>,
+      <code>__str__</code>,
+      <code>__subclasshook__</code>
+      </p>
+    </td>
+  </tr>
+</table>
+<!-- ==================== CLASS VARIABLES ==================== -->
+<a name="section-ClassVariables"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Class Variables</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-ClassVariables"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="name"></a><span class="summary-name">name</span> = <code title="&quot;creates_exe&quot;">&quot;creates_exe&quot;</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="description"></a><span class="summary-name">description</span> = <code title="&quot;Creates a Windows executable on the filesystem&quot;">&quot;Creates a Windows executable on the filesystem&quot;</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="severity"></a><span class="summary-name">severity</span> = <code title="2">2</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="categories"></a><span class="summary-name">categories</span> = <code title="[&quot;generic&quot;]">[&quot;generic&quot;]</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="authors"></a><span class="summary-name">authors</span> = <code title="[&quot;Cuckoo Developers&quot;]">[&quot;Cuckoo Developers&quot;]</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="minimum"></a><span class="summary-name">minimum</span> = <code title="&quot;0.5&quot;">&quot;0.5&quot;</code><br />
+      hash(x)
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" class="summary">
+    <p class="indent-wrapped-lines"><b>Inherited from <code><a href="lib.cuckoo.common.abstracts.Signature-class.html">lib.cuckoo.common.abstracts.Signature</a></code></b>:
+      <code><a href="lib.cuckoo.common.abstracts.Signature-class.html#alert">alert</a></code>,
+      <code><a href="lib.cuckoo.common.abstracts.Signature-class.html#enabled">enabled</a></code>,
+      <code><a href="lib.cuckoo.common.abstracts.Signature-class.html#families">families</a></code>,
+      <code><a href="lib.cuckoo.common.abstracts.Signature-class.html#maximum">maximum</a></code>,
+      <code><a href="lib.cuckoo.common.abstracts.Signature-class.html#references">references</a></code>
+      </p>
+    </td>
+  </tr>
+</table>
+<!-- ==================== PROPERTIES ==================== -->
+<a name="section-Properties"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Properties</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-Properties"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+  <tr>
+    <td colspan="2" class="summary">
+    <p class="indent-wrapped-lines"><b>Inherited from <code>object</code></b>:
+      <code>__class__</code>
+      </p>
+    </td>
+  </tr>
+</table>
+<!-- ==================== METHOD DETAILS ==================== -->
+<a name="section-MethodDetails"></a>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Method Details</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-MethodDetails"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+</table>
+<a name="run"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">run</span>(<span class="sig-arg">self</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="modules.signatures.creates_exe-pysrc.html#CreatesExe.run">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Start signature processing.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>results</code></strong> - analysis results.</li>
+    </ul></dd>
+    <dt>Raises:</dt>
+    <dd><ul class="nomargin-top">
+        <li><code><strong class='fraise'>NotImplementedError</strong></code> - this method is abstract.</li>
+    </ul></dd>
+    <dt>Overrides:
+        <a href="lib.cuckoo.common.abstracts.Signature-class.html#run">lib.cuckoo.common.abstracts.Signature.run</a>
+        <dd><em class="note">(inherited documentation)</em></dd>
+    </dt>
+  </dl>
+</td></tr></table>
+</div>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            ><a class="navbar" target="_top" href="http://www.cuckoobox.org">Cuckoo Sandbox Developer Documentation</a></th>
+          </tr></table></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1 on Fri Dec 21 00:02:03 2012
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

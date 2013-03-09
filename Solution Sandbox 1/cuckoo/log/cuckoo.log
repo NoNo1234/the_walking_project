@@ -1,0 +1,6 @@
+2013-02-19 09:29:23,584 [lib.cuckoo.core.scheduler] INFO: Using "virtualbox" machine manager
+2013-02-19 09:29:23,599 [root] CRITICAL: CuckooCriticalError: VirtualBox VBoxManage not found at specified path "/usr/bin/VBoxManage"
+2013-02-19 09:32:44,712 [lib.cuckoo.core.scheduler] INFO: Using "virtualbox" machine manager
+2013-02-19 09:32:44,779 [root] CRITICAL: CuckooCriticalError: Configured machine cuckoo1 was not detected or it's not in proper state
+2013-03-06 17:51:15,822 [lib.cuckoo.core.scheduler] INFO: Using "virtualbox" machine manager
+2013-03-06 17:51:15,862 [root] CRITICAL: CuckooCriticalError: Configured machine cuckoo1 was not detected or it's not in proper state

@@ -1,0 +1,300 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Configuration &mdash; Cuckoo Sandbox v0.5 Book</title>
+    <link rel="stylesheet" href="../../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '0.5',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="Cuckoo Sandbox v0.5 Book" href="../../index.html" />
+    <link rel="up" title="Preparing the Host" href="index.html" />
+    <link rel="next" title="Preparing the Guest" href="../guest/index.html" />
+    <link rel="prev" title="Installing Cuckoo" href="installation.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../guest/index.html" title="Preparing the Guest"
+             accesskey="N">next</a></li>
+        <li class="right" >
+          <a href="installation.html" title="Installing Cuckoo"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../index.html">Cuckoo Sandbox v0.5 Book</a> &raquo;</li>
+          <li><a href="../index.html" >Installation</a> &raquo;</li>
+          <li><a href="index.html" accesskey="U">Preparing the Host</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="configuration">
+<h1>Configuration<a class="headerlink" href="#configuration" title="Permalink to this headline">¶</a></h1>
+<p>Cuckoo relies on three main configuration files:</p>
+<blockquote>
+<div><ul class="simple">
+<li><a class="reference internal" href="#cuckoo-conf"><em>cuckoo.conf</em></a>: for configuring general behavior and analysis options.</li>
+<li><a class="reference internal" href="#machinemanager-conf"><em>&lt;machinemanager&gt;.conf</em></a>: for defining the options for your virtualization software.</li>
+<li><a class="reference internal" href="#reporting-conf"><em>reporting.conf</em></a>: for enabling or disabling report formats.</li>
+</ul>
+</div></blockquote>
+<div class="section" id="cuckoo-conf">
+<span id="id1"></span><h2>cuckoo.conf<a class="headerlink" href="#cuckoo-conf" title="Permalink to this headline">¶</a></h2>
+<p>The first file to edit is <em>conf/cuckoo.conf</em>, whose content is:</p>
+<div class="highlight-python"><pre>[cuckoo]
+# Enable or disable startup version check. When enabled, Cuckoo will connect
+# to a remote location to verify whether the running version is the latest
+# one available.
+version_check = on
+
+# If turned on, Cuckoo will delete the original file and will just store a
+# copy in the local binaries repository.
+delete_original = off
+
+# Specify the name of the machine manager module to use, this module will
+# define the interaction between Cuckoo and your virtualization software
+# of choice.
+machine_manager = virtualbox
+
+# Enable creation of memory dump of the analysis machine before shutting
+# down. Even if turned off, this functionality can also be enabled at
+# submission. Currently available for: VirtualBox and libvirt modules (KVM).
+memory_dump = off
+
+[processing]
+# Set the maximum size of analysis's generated files to process.
+# This is used to avoid the processing of big files which can bring memory leak.
+# The value is expressed in bytes, by default 100Mb.
+analysis_size_limit = 104857600
+
+# Enable or disable DNS lookups.
+resolve_dns = on
+
+[database]
+# Specify the database connection string.
+# Examples, see documentation for more:
+# sqlite:///foo.db
+# postgresql://foo:bar@localhost:5432/mydatabase
+# mysql://foo:bar@localhost/mydatabase
+# If empty, default is a SQLite in  db/cuckoo.db.
+connection =
+
+# Database connection timeout in seconds.
+# If empty, default is set to 60 seconds.
+timeout =
+
+[timeouts]
+# Set the default analysis timeout expressed in seconds. This value will be
+# used to define after how many seconds the analysis will terminate unless
+# otherwise specified at submission.
+default = 120
+
+# Set the critical timeout expressed in seconds. After this timeout is hit
+# Cuckoo will consider the analysis failed and it will shutdown the machine
+# no matter what. When this happens the analysis results will most likely
+# be lost. Make sure to have a critical timeout greater than the
+# default timeout.
+critical = 600
+
+# Maximum time to wait for virtual machine status change. For example when
+# shutting down a vm. Default is 300 seconds.
+vm_state = 300
+
+[sniffer]
+# Enable or disable the use of an external sniffer (tcpdump) [yes/no].
+enabled = yes
+
+# Specify the path to your local installation of tcpdump. Make sure this
+# path is correct.
+tcpdump = /usr/sbin/tcpdump
+
+# Specify the network interface name on which tcpdump should monitor the
+# traffic. Make sure the interface is active.
+interface = vboxnet0
+
+[graylog]
+# Enable or disable remote logging to a Graylog2 server.
+enabled = no
+
+# Graylog2 server host.
+host = localhost
+
+# Graylog2 server port.
+port = 12201
+
+# Default logging level for Graylog2. [debug/info/error/critical].
+level = error</pre>
+</div>
+<p>The configuration file is self-explainatory.</p>
+</div>
+<div class="section" id="machinemanager-conf">
+<span id="id2"></span><h2>&lt;machinemanager&gt;.conf<a class="headerlink" href="#machinemanager-conf" title="Permalink to this headline">¶</a></h2>
+<p>Machine managers are the modules that define how Cuckoo should interact with
+your virtualization software of choice.</p>
+<p>Every module should have a dedicated configuration file which defines the
+details on the available machines. For example, if you created a <em>vmware.py</em>
+machine manager module, you should specify <em>vmware</em> in <em>conf/cuckoo.conf</em>
+and have a <em>conf/vmware.conf</em> file.</p>
+<p>Cuckoo provides some modules by default and for the sake of this guide, we&#8217;ll
+assume you&#8217;re going to use VirtualBox.</p>
+<p>Following is the default <em>conf/virtualbox.conf</em> file:</p>
+<div class="highlight-python"><pre>[virtualbox]
+# Specify which VirtualBox mode you want to run your machines on.
+# Can be "gui", "sdl" or "headless". Refer to VirtualBox's official
+# documentation to understand the differences.
+mode = gui
+
+# Path to the local installation of the VBoxManage utility.
+path = /usr/bin/VBoxManage
+
+# Specify a comma-separated list of available machines to be used. For each
+# specified ID you have to define a dedicated section containing the details
+# on the respective machine. (E.g. cuckoo1,cuckoo2,cuckoo3)
+machines = cuckoo1
+
+[cuckoo1]
+# Specify the label name of the current machine as specified in your
+# VirtualBox configuration.
+label = cuckoo1
+
+# Specify the operating system platform used by current machine
+# [windows/darwin/linux].
+platform = windows
+
+# Specify the IP address of the current machine. Make sure that the IP address
+# is valid and that the host machine is able to reach it. If not, the analysis
+# will fail.
+ip = 192.168.56.101</pre>
+</div>
+<p>You can use this same configuration structure for any other machine manager module.</p>
+<p>The comments for the options are self-explainatory.</p>
+</div>
+<div class="section" id="reporting-conf">
+<span id="id3"></span><h2>reporting.conf<a class="headerlink" href="#reporting-conf" title="Permalink to this headline">¶</a></h2>
+<p>The <em>conf/reporting.conf</em> file contains information on the automated reports
+generation.</p>
+<p>It contains the following sections:</p>
+<div class="highlight-python"><pre># Enable or disable the available reporting modules [on/off].
+# If you add a custom reporting module to your Cuckoo setup, you have to add
+# a dedicated entry in this file, or it won't be executed.
+# You can also add additional options under the section of your module and
+# they will be available in your Python class.
+
+[jsondump]
+enabled = on
+
+[reporthtml]
+enabled = on
+
+[pickled]
+enabled = off
+
+[metadata]
+enabled = off
+
+[maec11]
+enabled = off
+
+[mongodb]
+enabled = off
+
+[hpfclient]
+enabled = off
+host =
+port = 10000
+ident =
+secret =
+channel =</pre>
+</div>
+<p>By setting those option to <em>on</em> or <em>off</em> you enable or disable the generation
+of such reports.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="../../index.html">
+              <img class="logo" src="../../_static/cuckoo.png" alt="Logo"/>
+            </a></p>
+  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Configuration</a><ul>
+<li><a class="reference internal" href="#cuckoo-conf">cuckoo.conf</a></li>
+<li><a class="reference internal" href="#machinemanager-conf">&lt;machinemanager&gt;.conf</a></li>
+<li><a class="reference internal" href="#reporting-conf">reporting.conf</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="installation.html"
+                        title="previous chapter">Installing Cuckoo</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="../guest/index.html"
+                        title="next chapter">Preparing the Guest</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../_sources/installation/host/configuration.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" size="18" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../guest/index.html" title="Preparing the Guest"
+             >next</a></li>
+        <li class="right" >
+          <a href="installation.html" title="Installing Cuckoo"
+             >previous</a> |</li>
+        <li><a href="../../index.html">Cuckoo Sandbox v0.5 Book</a> &raquo;</li>
+          <li><a href="../index.html" >Installation</a> &raquo;</li>
+          <li><a href="index.html" >Preparing the Host</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2010-2012, Cuckoo Sandbox.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.7.
+    </div>
+  </body>
+</html>
