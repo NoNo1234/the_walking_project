@@ -1,0 +1,32 @@
+-----------
+To know
+-----------
+
+Malware have well-developed ability to detect the presence of a virtual environment.
+
+Here are some examples showing that detect malware virtual machines:
+
+- Check for the presence of virtualized hardware:
+
+Virtual environments have virtual network interfaces. Just like any network interface, they are assigned a unique MAC address that usually includes the manufacturer's identification number. 
+For example, a network interface for VMware Workstation will have a MAC address that starts with 00:50:56 or 00:0C:29 (VMware has more than one organizationally unique identifier or OUI). Malware can check for the presence of certain OUIs and choose to behave differently or not to display any malignant behavior whatsoever in a virtual machine.
+
+The presence of HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\ProductId 76487-644-3177037-23510 shows that the host environment is CWSandbox.
+
+Each virtual machine is associated with specific device drivers, registry values that give away their nature. For instance:
+
+Hard drive driver (VMware):
+HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Enum\IDE\DiskVMware_Virtual_IDE_Hard_
+Drive___________00000001\3030303030303030303030303030303030303130\FriendlyName VMware Virtual IDE Hard Drive
+
+Video driver (VMware):
+HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\Class\{4D36E968-E325-11CE-BFC1-08002BE10318}\0000\DriverDesc VMware SVGA II
+
+Mouse driver (VMware):
+%WINDIR%\system32\drivers\vmmouse.sys
+
+Any of these can be used by a malware writer to detect the presence of a virtual machine.
+
+How to thwart virtual machine detection:
+
+For starters, do not install tools provided by the virtual machine in your guest OS. For example, VMware provides a set of tools called VMware Tools that enhances the overall user experience with the guest OS. The drawback is that installing VMware Tools in a Windows guest OS will leave many clues easily detectable by a piece malware that it is being run in a virtual machine.

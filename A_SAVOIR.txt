@@ -1,0 +1,34 @@
+-----------
+A savoir
+-----------
+
+Les malwares les mieux développés ont la capacité de détecter la présence d'un environnement virtuel.
+
+Voici quelques exemples montrant que les malwares détectent les machines virtuelles : 
+
+- Vérifier la présence de matériel virtualisé:
+
+Les environnements virtuels ont des interfaces réseau virtuelles. Tout comme n'importe quelle interface réseau, ils se voient attribuer une adresse MAC unique qui inclut habituellement le numéro d'identification du fabricant.
+Par exemple, une interface réseau pour VMware Workstation dispose d'une adresse MAC qui commence par 00:50:56 ou 00:0 C: 29 (VMware a plus d'un identifiant unique ou organisationnel OUI). 
+Les logiciels malveillants peuvent vérifier la présence de certains OUIs et choisir de se comporter différemment ou de ne pas afficher un comportement malin que ce soit dans une machine virtuelle.
+
+La présence de HKEY_LOCAL_MACHINE \ Software \ Microsoft \ Windows \ CurrentVersion \ ProductID 76487-644-3177037-23510 montre que le milieu d'accueil est CWSandbox.
+
+Chaque machine virtuelle est associée à des pilotes de périphériques spécifiques, les valeurs de registre peuvent donner des informations. Par exemple:
+
+Pilote de disque dur (VMware):
+HKEY_LOCAL_MACHINE \ SYSTEM \ CurrentControlSet \ Enum \ IDE \ DiskVMware_Virtual_IDE_Hard_
+Drive___________00000001 \ 3030303030303030303030303030303030303130 \ FriendlyName VMware Virtual disque dur IDE
+
+Pilote vidéo (VMware):
+VMware SVGA II
+
+Pilote de la souris (VMware):
+% Windir% \ system32 \ drivers \ vmmouse.sys
+
+Tout ces éléments peuvent être utilisés par des logiciels malveillants pour détecter la présence d'une machine virtuelle.
+
+
+- Eviter d'installer les "tools" fournit par les développeurs : 
+
+Ne pas installer les outils fournis par la machine virtuelle dans votre OS invité. Par exemple, VMware fournit un ensemble d'outils appelé VMware Tools qui améliorent l'expérience globale de l'utilisateur avec le système d'exploitation invité. L'inconvénient est que l'installation de VMware Tools dans un OS invité Windows laissera de nombreux indices facilement détectable par un malware lorsqu'il est en cours d'exécution dans une machine virtuelle.
