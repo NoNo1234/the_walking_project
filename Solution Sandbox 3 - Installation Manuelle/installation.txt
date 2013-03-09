@@ -1,0 +1,14 @@
+Procédure : 
+
+Installez VirtualBox qui permettre de créer un environnement virtualisé pour éviter tout danger dans la machine hôte : 
+
+Téléchargez le logiciel à cet endroit : 
+
+https://www.virtualbox.org/wiki/Downloads
+
+
+Après avoir installer VirtualBox, vous n'avez qu'à mettre en place un OS qui pourra accueuillir les malwares.
+
+
+
+Attention !!! -> Pour éviter tout danger, il faut désactiver les services réseaux de la machine virtuelle car il est possible que certain malware infecte la machine hôte à travers une connexion TCP/IP provenant de la machine guest.
